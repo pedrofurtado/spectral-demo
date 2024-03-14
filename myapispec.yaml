@@ -20,7 +20,7 @@ servers:
 
 tags:
   - name: my-api
-    description: Everything about your my-api
+    #description: Everything about your my-api  ##### remove this line to trigger an error in CI pipeline
 
 paths:
   /my-api:
