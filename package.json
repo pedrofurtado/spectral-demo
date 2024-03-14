@@ -1,0 +1,22 @@
+{
+  "name": "spectral-demo",
+  "version": "1.0.0",
+  "description": "Spectral OpenAPI yaml linter demo. Just for fun.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedrofurtado/spectral-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pedrofurtado/spectral-demo/issues"
+  },
+  "homepage": "https://github.com/pedrofurtado/spectral-demo#readme",
+  "devDependencies": {
+    "@stoplight/spectral-cli": "^6.11.0"
+  }
+}

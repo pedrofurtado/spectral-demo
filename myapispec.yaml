@@ -1,0 +1,96 @@
+openapi: 3.0.3
+info:
+  title: My API
+  version: 2.0.0
+  description: lorem ipsum
+  license:
+    name: MIT
+    url: http://url.here
+  contact:
+    name: Fulano
+    url: http://localhost:3000
+    email: fulano@de.tal.com
+servers:
+  -
+    url: 'http://localhost:3000/api'
+    description: Dev Environment
+  -
+    url: 'https://myapi.very.fun'
+    description: Production Environment
+
+tags:
+  - name: my-api
+    description: Everything about your my-api
+
+paths:
+  /my-api:
+    summary: >-
+      Funny API to play
+    description: my-api API description
+    servers:
+      -
+        url: 'http://localhost:3000/api'
+        description: Development Environment
+      -
+        url: 'https://my-api.api.com'
+        description: Production Environment
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                name:
+                  type: string
+                nickname:
+                  type: string
+                description:
+                  type: string
+                phone:
+                  type: string
+                email:
+                  type: string
+        required: true
+      tags:
+        - my-api
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/myapi-created'
+              examples:
+                myapi:
+                  value:
+                    phone: 1X-DC
+                    email: joe@doe.com
+                    description: lorem ipsum
+                    nickname: 'john'
+                    name: 'James'
+          description: ''
+      operationId: create-myapi
+      summary: Create my api
+      description: lorem ipsum
+components:
+  schemas:
+    myapi-created:
+      title: Root Type for myapi-created
+      description: When was created successfully
+      type: object
+      properties:
+        phone:
+          type: string
+        email:
+          type: string
+        description:
+          type: string
+        nickname:
+          type: string
+        name:
+          type: string
+      example:
+        phone: 1X-DC
+        email: joe@doe.com
+        description: lorem ipsum
+        nickname: 'john'
+        name: 'james'

@@ -1,0 +1,24 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set NodeJS version
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Spectral version
+        run: npx spectral --version
+
+      - name: Run spectral tests
+        run: npx spectral lint myapispec.yaml --ruleset my-spectral-rulesets.yaml
